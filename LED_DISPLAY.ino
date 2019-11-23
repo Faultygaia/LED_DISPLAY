@@ -16,33 +16,9 @@ const int ledB_2 = A3;
 const int ledF_2 = A2;
 const int ledG_2 = A1;
 char HIGH1 = HIGH;
+int i = 0;
+int u = 1;
 
-void setup() {
-  // put your setup code here, to run once:
-  pinMode(ledA_1 ,OUTPUT);
-  pinMode(ledB_1 ,OUTPUT);
-  pinMode(ledC_1 ,OUTPUT);
-  pinMode(ledD_1 ,OUTPUT);
-  pinMode(ledE_1 ,OUTPUT);
-  pinMode(ledF_1 ,OUTPUT);
-  pinMode(ledG_1 ,OUTPUT);
-  pinMode(ledH_1 ,OUTPUT);
-  pinMode(ledA_2 ,OUTPUT);
-  pinMode(ledC_2 ,OUTPUT);
-  pinMode(ledD_2 ,OUTPUT);
-  pinMode(ledE_2 ,OUTPUT);
-  pinMode(ledH_2 ,OUTPUT);
-  pinMode(ledB_2 ,OUTPUT);
-  pinMode(ledF_2 ,OUTPUT);
-  pinMode(ledG_2 ,OUTPUT);
-
-
-}
-
-void loop() {
-  // put your main code here, to run repeatedly:
-  Display(3,2);
-}
 void Display(int h)
 {
   if(h == 1)
@@ -214,3 +190,46 @@ void Display(int r, int h)
     digitalWrite(ledF_2, HIGH1);
   }
 }
+void setup() {
+  // put your setup code here, to run once:
+
+  pinMode(ledA_1 ,OUTPUT);
+  pinMode(ledB_1 ,OUTPUT);
+  pinMode(ledC_1 ,OUTPUT);
+  pinMode(ledD_1 ,OUTPUT);
+  pinMode(ledE_1 ,OUTPUT);
+  pinMode(ledF_1 ,OUTPUT);
+  pinMode(ledG_1 ,OUTPUT);
+  pinMode(ledH_1 ,OUTPUT);
+  pinMode(ledA_2 ,OUTPUT);
+  pinMode(ledC_2 ,OUTPUT);
+  pinMode(ledD_2 ,OUTPUT);
+  pinMode(ledE_2 ,OUTPUT);
+  pinMode(ledH_2 ,OUTPUT);
+  pinMode(ledB_2 ,OUTPUT);
+  pinMode(ledF_2 ,OUTPUT);
+  pinMode(ledG_2 ,OUTPUT);
+  
+}
+void loop() {
+  // put your main code here, to run repeatedly:
+ while(u == 1)
+  {
+    while(i <= 9)
+    {
+      Display(i,u);
+      delay(100);
+      i++;
+    }
+  }
+  u++;
+  while(u == 2)
+  {
+    while(i <= 9)
+    {
+      Display(i,u);
+      delay(100);
+      i++;
+    }
+  }
+} 
